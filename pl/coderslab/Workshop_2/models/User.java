@@ -8,7 +8,6 @@ public class User {
     private String userName;
     private String email;
     private String password;
-    private int userGroupId;
 
     public User(String userName, String email, String password) {
         this.userName = userName;
@@ -56,11 +55,4 @@ public class User {
         this.id = id;
     }
 
-    public int getUserGroupId() {
-        return userGroupId;
-    }
-
-    public void setUserGroupId(int userGroupId) {
-        this.userGroupId = userGroupId;
-    }
 }

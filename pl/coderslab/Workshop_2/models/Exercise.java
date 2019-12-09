@@ -1,0 +1,4 @@
+package pl.coderslab.Workshop_2.models;
+
+public class Exercise {
+}
