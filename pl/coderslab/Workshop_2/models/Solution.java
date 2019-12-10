@@ -6,8 +6,10 @@ public class Solution {
     private String created;
     private String updated;
     private String description;
+    private int exerciseId;
+    private int userId;
 
-    public Solution () {
+    public Solution() {
 
     }
 
@@ -47,5 +49,21 @@ public class Solution {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getExerciseId() {
+        return exerciseId;
+    }
+
+    public void setExerciseId(Exercise exercise) {
+        this.exerciseId = exercise.getId();
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(User user) {
+        this.userId = user.getId();
     }
 }

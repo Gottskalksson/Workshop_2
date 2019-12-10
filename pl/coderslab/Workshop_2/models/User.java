@@ -8,11 +8,20 @@ public class User {
     private String userName;
     private String email;
     private String password;
+    private int userGroupId;
 
     public User(String userName, String email, String password) {
         this.userName = userName;
         this.email = email;
         this.hashPassword(password);
+    }
+
+    public int getUserGroupId() {
+        return userGroupId;
+    }
+
+    public void setUserGroupId(Group group) {
+        this.userGroupId = group.getId();
     }
 
     public User() {
