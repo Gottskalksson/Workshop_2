@@ -42,7 +42,9 @@ public class GroupDao {
             if (resultSet.next()) {
                 Group group = new Group();
                 group.setId(resultSet.getInt("id"));
-                group.setName(resultSet.getString("username"));
+                group.setName(resultSet.getString("name"));
+                System.out.println(group.getId());
+                System.out.println(group.getName());
                 return group;
             }
         } catch (SQLException e) {
@@ -81,13 +83,15 @@ public class GroupDao {
                 Group group = new Group();
                 group.setId(resultSet.getInt("id"));
                 group.setName(resultSet.getString("name"));
+                System.out.println(group.getId());
+                System.out.println(group.getName());
                 groups = addToArray(group, groups);
             }
             return groups;
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+        return null;
     }
 
     private Group[] addToArray(Group u, Group[] users) {
