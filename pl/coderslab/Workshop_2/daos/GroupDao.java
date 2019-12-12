@@ -79,12 +79,12 @@ public class GroupDao {
             Group[] groups = new Group[0];
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_GROUPS_QUERY);
             ResultSet resultSet = statement.executeQuery();
+            System.out.println("ID Group / Name of group");
             while (resultSet.next()) {
                 Group group = new Group();
                 group.setId(resultSet.getInt("id"));
                 group.setName(resultSet.getString("name"));
-                System.out.println(group.getId());
-                System.out.println(group.getName());
+                System.out.println(group.getId() + " / " + group.getName());
                 groups = addToArray(group, groups);
             }
             return groups;

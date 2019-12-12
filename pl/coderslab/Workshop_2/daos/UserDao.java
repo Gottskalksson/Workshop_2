@@ -88,6 +88,7 @@ public class UserDao {
         try (Connection conn = DBUtil.getConnection()) {
             User[] users = new User[0];
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_USERS_QUERY);
+            System.out.println("ID / User Name / E-mail / ID Group");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 User user = new User();
@@ -95,7 +96,9 @@ public class UserDao {
                 user.setUserName(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-                user.setId(resultSet.getInt("user_group_id"));
+                user.setUserGroupId(resultSet.getInt("user_group_id"));
+                System.out.println(user.getId() + " / " + user.getUserName() + " / "
+                        + user.getEmail() + " / " + user.getUserGroupId());
                 users = addToArray(user, users);
             }
             return users;

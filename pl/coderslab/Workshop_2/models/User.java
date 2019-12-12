@@ -24,6 +24,10 @@ public class User {
         this.userGroupId = group.getId();
     }
 
+    public void setUserGroupId(int userGroupId) {
+        this.userGroupId = userGroupId;
+    }
+
     public User() {
 
     }
@@ -63,5 +67,6 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
+
 
 }
