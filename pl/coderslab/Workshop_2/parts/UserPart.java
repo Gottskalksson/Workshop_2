@@ -98,8 +98,8 @@ public class UserPart {
                                 }
                             }
                             User user = new User(username, email, newPass);
-                            group.setId(groupId);
-                            user.setUserGroupId(group);
+
+                            user.setUserGroupId(groupId);
                             user.setId(userId);
                             userDao.update(user);
                         }

@@ -51,6 +51,7 @@ public class SolutionDao {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 Solution[] solutions = new Solution[0];
+                System.out.println("ID / Created / Updated / Description / Exercise ID / User ID");
                 solutions = getSolutions(solutions, resultSet);
             }
         } catch (SQLException e) {
