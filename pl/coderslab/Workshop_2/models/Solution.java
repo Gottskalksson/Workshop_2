@@ -59,11 +59,21 @@ public class Solution {
         this.exerciseId = exercise.getId();
     }
 
+    public void setExerciseId(int exerciseId) {
+        this.exerciseId = exerciseId;
+    }
+
+
+
     public int getUserId() {
         return userId;
     }
 
     public void setUserId(User user) {
         this.userId = user.getId();
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

@@ -66,10 +66,9 @@ public class SolutionDao {
     public void update(Solution solution) {
         try (Connection conn = DBUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(UPDATE_SOLUTION_QUERY);
-            statement.setString(1, solution.getCreated());
-            statement.setString(2, solution.getUpdated());
-            statement.setString(3, solution.getDescription());
-            statement.setInt(4, solution.getId());
+            statement.setString(1, solution.getUpdated());
+            statement.setString(2, solution.getDescription());
+            statement.setInt(3, solution.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -90,6 +89,7 @@ public class SolutionDao {
         try (Connection conn = DBUtil.getConnection()) {
             Solution[] solutions = new Solution[0];
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_SOLUTIONS_QUERY);
+            System.out.println("ID / Created / Updated / Description / Exercise ID / User ID");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 solutions = getSolutions(solutions, resultSet);
@@ -147,6 +147,11 @@ public class SolutionDao {
         solution.setCreated(resultSet.getString("created"));
         solution.setUpdated(resultSet.getString("updated"));
         solution.setDescription(resultSet.getString("description"));
+        solution.setExerciseId(resultSet.getInt("exercise_id"));
+        solution.setUserId(resultSet.getInt("user_id"));
+        System.out.println(solution.getId() + " / " + solution.getCreated() + " / "
+                + solution.getUpdated() + " / " + solution.getDescription() + " / " + solution.getExerciseId() + " / " +
+                solution.getUserId());
         solutions = addToArray(solution, solutions);
         return solutions;
     }

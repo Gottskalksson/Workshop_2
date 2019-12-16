@@ -82,11 +82,14 @@ public class ExerciseDao {
             Exercise[] exercises = new Exercise[0];
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_EXERCISES_QUERY);
             ResultSet resultSet = statement.executeQuery();
+            System.out.println("ID / Title / Description");
             while (resultSet.next()) {
                 Exercise exercise = new Exercise();
                 exercise.setId(resultSet.getInt("id"));
                 exercise.setTitle(resultSet.getString("title"));
                 exercise.setDescription(resultSet.getString("description"));
+                System.out.println(exercise.getId() + " / " + exercise.getTitle() + " / "
+                        + exercise.getDescription());
                 exercises = addToArray(exercise, exercises);
             }
             return exercises;

@@ -1,6 +1,7 @@
-package pl.coderslab.Workshop_2;
+package pl.coderslab.Workshop_2.parts;
 
 import org.mindrot.jbcrypt.BCrypt;
+import pl.coderslab.Workshop_2.DBUtil;
 import pl.coderslab.Workshop_2.daos.GroupDao;
 import pl.coderslab.Workshop_2.daos.UserDao;
 import pl.coderslab.Workshop_2.models.Group;
@@ -25,10 +26,10 @@ public class UserPart {
         while (!answer.equals("quit")) {
             userDao.findAll();
             System.out.println("What do you want to do?");
-            System.out.println("add");
-            System.out.println("edit");
-            System.out.println("delete");
-            System.out.println("quit");
+            System.out.println("-> add - add new user;");
+            System.out.println("-> edit - edit user");
+            System.out.println("-> delete - remove user from database");
+            System.out.println("-> quit - exit");
             System.out.println();
 
             answer = answer();
@@ -153,18 +154,11 @@ public class UserPart {
 
     public static String checkAnswer(String answer) {
         while (!(answer.equals("add") || answer.equals("edit") || answer.equals("delete") || answer.equals("quit"))) {
-            System.out.println("Podaj poprawną literę - add, edit, delete lub quit: ");
+            System.out.println("Incorrect choice! Please write one of this - add, edit, delete lub quit: ");
             answer = answer();
         }
         return answer;
     }
-
-//    public static void yesOrNo(String answer) {
-//        while (!(answer.equals("T") || answer.equals("N"))) {
-//            System.out.println("Podaj poprawną literę - T lub N:");
-//            answer = answer();
-//        }
-//    }
 
     public static String answer() {
         Scanner scan = new Scanner(System.in);
