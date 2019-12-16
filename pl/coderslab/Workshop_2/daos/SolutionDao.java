@@ -50,12 +50,8 @@ public class SolutionDao {
             statement.setInt(1, userId);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                Solution solution = new Solution();
-                solution.setId(resultSet.getInt("id"));
-                solution.setCreated(resultSet.getString("created"));
-                solution.setUpdated(resultSet.getString("updated"));
-                solution.setDescription(resultSet.getString("description"));
-                return solution;
+                Solution[] solutions = new Solution[0];
+                solutions = getSolutions(solutions, resultSet);
             }
         } catch (SQLException e) {
             e.printStackTrace();
