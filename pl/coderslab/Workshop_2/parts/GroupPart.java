@@ -13,11 +13,11 @@ public class GroupPart {
 
         while (!answer.equals("quit")) {
             groupDao.findAll();
-            System.out.println("What do you want to do?");
-            System.out.println("-> add - add new group;");
-            System.out.println("-> edit - edit group");
-            System.out.println("-> delete - remove group from database");
-            System.out.println("-> quit - exit");
+            System.out.println("Wybierz jedną z opcji");
+            System.out.println("-> add - dodaj grupę;");
+            System.out.println("-> edit - edytuj grupę");
+            System.out.println("-> delete - usuń grupę");
+            System.out.println("-> quit - zakończ program");
             System.out.println();
 
 
@@ -27,7 +27,7 @@ public class GroupPart {
                 break;
             } else if (answer.equals("add")) {
 
-                System.out.println("Please write group's name : ");
+                System.out.println("Podaj nazwę grupy : ");
                 String name = answer();
 
 
@@ -39,14 +39,14 @@ public class GroupPart {
                 int groupId = 0;
                 while (groupId < 1) {
                     try {
-                        System.out.println("Write Group ID: ");
+                        System.out.println("Podaj ID grupy: ");
                         groupId = Integer.parseInt(answer());
                     } catch (NumberFormatException e) {
                         System.out.println("Podano niewłaściwy numer!");
                     }
                 }
 
-                System.out.println("Write new name for this group: ");
+                System.out.println("Podaj nową nazwę dla grupy: ");
                 String name = answer();
 
 
@@ -60,14 +60,14 @@ public class GroupPart {
                 int groupId = 0;
                 while (groupId < 1) {
                     try {
-                        System.out.println("Write group ID: ");
+                        System.out.println("Podaj ID grupy: ");
                         groupId = Integer.parseInt(answer());
                     } catch (NumberFormatException e) {
                         System.out.println("Podano niewłaściwy numer!");
                     }
                 }
 
-                System.out.println("Are You sure to remove this group? T/N :");
+                System.out.println("Jeśli na pewno chcesz usunąć grupę, potwierdź poniżej, wpisując literę 't' :");
                 String yesOrNo = answer();
                 if (yesOrNo.equalsIgnoreCase("t")) {
                     groupDao.delete(groupId);
@@ -80,7 +80,7 @@ public class GroupPart {
 
     private static String checkAnswer(String answer) {
         while (!(answer.equals("add") || answer.equals("edit") || answer.equals("delete") || answer.equals("quit"))) {
-            System.out.println("Incorrect choice! Please write one of this - add, edit, delete lub quit: ");
+            System.out.println("Podano niepoprawną opcję! Wpisz jedną z podanych - add, edit, delete lub quit: ");
             answer = answer();
         }
         return answer;

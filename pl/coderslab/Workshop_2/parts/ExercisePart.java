@@ -21,11 +21,11 @@ public class ExercisePart {
 
         while (!answer.equals("quit")) {
             exerciseDao.findAll();
-            System.out.println("What do you want to do?");
-            System.out.println("-> add - add new exercise;");
-            System.out.println("-> edit - edit exercise");
-            System.out.println("-> delete - remove exercise from database");
-            System.out.println("-> quit - exit");
+            System.out.println("Wybierz jedną z opcji:");
+            System.out.println("-> add - dodaj zadanie");
+            System.out.println("-> edit - edytuj zadanie");
+            System.out.println("-> delete - usuń zadanie");
+            System.out.println("-> quit - zakończ program");
             System.out.println();
 
 
@@ -35,9 +35,9 @@ public class ExercisePart {
                 break;
             } else if (answer.equals("add")) {
 
-                System.out.println("Title of exercise: ");
+                System.out.println("Nazwa zadania: ");
                 String title = answer();
-                System.out.println("Describe this exercise: ");
+                System.out.println("Polecenie zadania: ");
                 String describe = answer();
 
 
@@ -54,13 +54,13 @@ public class ExercisePart {
                         System.out.println("Please write exercise ID's solution: ");
                         exerciseId = Integer.parseInt(answer());
                     } catch (NumberFormatException e) {
-                        System.out.println("You wrote wrong exercise ID!");
+                        System.out.println("Podano zły numer ID zadania!");
                     }
                 }
 
-                System.out.println("Write new title for this exercise: ");
+                System.out.println("Podaj nową nazwę zadania: ");
                 String title = answer();
-                System.out.println("Write new description for this solution: ");
+                System.out.println("Podaj nowe polecenie do zadania: ");
                 String description = answer();
 
 
@@ -77,14 +77,14 @@ public class ExercisePart {
                 int exerciseId = 0;
                 while (exerciseId < 1) {
                     try {
-                        System.out.println("Please write exercise ID's solution: ");
+                        System.out.println("Podaj poniżej numer ID zadania: ");
                         exerciseId = Integer.parseInt(answer());
                     } catch (NumberFormatException e) {
-                        System.out.println("You wrote wrong exercise ID!");
+                        System.out.println("Podano zły numer ID zadania!");
                     }
                 }
 
-                System.out.println("Are You sure to remove this exercise? T/N :");
+                System.out.println("Jeśli na pewno chcesz usunąć to zadanie, wpisz poniżej literę 't' :");
                 String yesOrNo = answer();
                 if (yesOrNo.equalsIgnoreCase("t")) {
                     exerciseDao.delete(exerciseId);
@@ -97,7 +97,7 @@ public class ExercisePart {
 
     public static String checkAnswer(String answer) {
         while (!(answer.equals("add") || answer.equals("edit") || answer.equals("delete") || answer.equals("quit"))) {
-            System.out.println("Incorrect choice! Please write one of this - add, edit, delete lub quit: ");
+            System.out.println("Podano niepoprawną opcję! Wpisz jedną z podanych - add, edit, delete lub quit: ");
             answer = answer();
         }
         return answer;

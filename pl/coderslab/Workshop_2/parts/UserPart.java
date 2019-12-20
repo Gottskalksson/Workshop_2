@@ -25,11 +25,11 @@ public class UserPart {
 
         while (!answer.equals("quit")) {
             userDao.findAll();
-            System.out.println("What do you want to do?");
-            System.out.println("-> add - add new user;");
-            System.out.println("-> edit - edit user");
-            System.out.println("-> delete - remove user from database");
-            System.out.println("-> quit - exit");
+            System.out.println("Wybierz jedną z opcji:");
+            System.out.println("-> add - dodanie użytkownika");
+            System.out.println("-> edit - edycja użytkownika");
+            System.out.println("-> delete - usunięcie użytkownika");
+            System.out.println("-> quit - zakończenie programu");
             System.out.println();
 
             answer = answer();
@@ -79,7 +79,7 @@ public class UserPart {
                     if (rs.next()) {
                         String pass = rs.getString("password");
                         if (!BCrypt.checkpw(passToCheck, pass)) {
-                            System.out.println("Wrong password!");
+                            System.out.println("Niepoprawne hasło!");
                         } else {
                             System.out.println("Podaj nową nazwę użytkownika: ");
                             String username = answer();
@@ -94,7 +94,7 @@ public class UserPart {
                                 try {
                                     groupId = Integer.parseInt(answer());
                                 } catch (NumberFormatException e) {
-                                    System.out.println("Podano zły numer grupy! Wpisz poprawny poniżej: ");
+                                    System.out.println("Podano zły numer grupy! Wpisz poprawne ID grupy poniżej: ");
                                 }
                             }
                             User user = new User(username, email, newPass);
@@ -104,7 +104,7 @@ public class UserPart {
                             userDao.update(user);
                         }
                     } else {
-                        System.out.println("Wrong ID Number!");
+                        System.out.println("Zły numer ID!");
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -131,16 +131,16 @@ public class UserPart {
                     if (rs.next()) {
                         String pass = rs.getString("password");
                         if (!BCrypt.checkpw(passToCheck, pass)) {
-                            System.out.println("Wrong password!");
+                            System.out.println("Niepoprawne hasło!");
                         } else {
-                            System.out.println("Czy na pewno chcesz usunąć tego użytkownika? T/N :");
+                            System.out.println("Jeśli jesteś pewien, że chcesz usunąć podanego użytkownika, wpis poniżej literę 't' :");
                             String yesOrNo = answer();
                             if (yesOrNo.equalsIgnoreCase("t")) {
                                 userDao.delete(userId);
                             }
                         }
                     } else {
-                        System.out.println("Wrong ID Number!");
+                        System.out.println("Zły numer ID!");
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -154,7 +154,7 @@ public class UserPart {
 
     public static String checkAnswer(String answer) {
         while (!(answer.equals("add") || answer.equals("edit") || answer.equals("delete") || answer.equals("quit"))) {
-            System.out.println("Incorrect choice! Please write one of this - add, edit, delete lub quit: ");
+            System.out.println("Podano niepoprawną opcję! Wpisz jedną z podanych - add, edit, delete lub quit: ");
             answer = answer();
         }
         return answer;

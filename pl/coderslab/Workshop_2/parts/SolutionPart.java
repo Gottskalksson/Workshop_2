@@ -17,10 +17,10 @@ public class SolutionPart {
         String answer = "";
 
         while (!answer.equals("quit")) {
-            System.out.println("What do you want to do?");
-            System.out.println("-> add - add solution to user;");
-            System.out.println("-> view - show user's solutions");
-            System.out.println("-> quit - exit");
+            System.out.println("Wybierz jedną z opcji");
+            System.out.println("-> add - przypisywanie zadań do użytkownika");
+            System.out.println("-> view - przeglądanie rozwiązań danego użytkownika");
+            System.out.println("-> quit - zakończenie programu");
             System.out.println();
 
 
@@ -55,7 +55,6 @@ public class SolutionPart {
                 solution.setUserId(userId);
                 solution.setExerciseId(exerciseId);
                 solution.setCreated(currentDate());
-                solution.setDescription("-");
                 solutionDao.create(solution);
 
 
@@ -63,14 +62,14 @@ public class SolutionPart {
                 int userId = 0;
                 while (userId < 1) {
                     try {
-                        System.out.println("Write User ID: ");
+                        System.out.println("Podaj ID użytkownika: ");
                         userId = Integer.parseInt(answer());
                     } catch (NumberFormatException e) {
                         System.out.println("Podano niewłaściwy numer!");
                     }
                 }
 
-                solutionDao.read(userId);
+                solutionDao.findAllByUserId(userId);
 
             }
 
@@ -80,7 +79,7 @@ public class SolutionPart {
 
     private static String checkAnswer(String answer) {
         while (!(answer.equals("add") || answer.equals("view") ||  answer.equals("quit"))) {
-            System.out.println("Incorrect choice! Please write one of this - add, edit, delete lub quit: ");
+            System.out.println("Podano niepoprawną opcję! Wpisz jedną z podanych - add, view lub quit: ");
             answer = answer();
         }
         return answer;

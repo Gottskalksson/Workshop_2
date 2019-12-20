@@ -65,7 +65,7 @@ public class Main {
                                     int exerciseId = 0;
                                     while (exerciseId < 1) {
                                         try {
-                                            System.out.println("Wpisz numer ID zadania, do którego chcesz wpisać rozwiązanie: ");
+                                            System.out.println("Wpisz numer ID zadania, do którego chcesz dodać rozwiązanie: ");
                                             exerciseId = Integer.parseInt(answer());
                                         } catch (NumberFormatException e) {
                                             System.out.println("Podano niewłaściwy numer!");
@@ -83,7 +83,7 @@ public class Main {
                                     if (!isRsNull.next()) {
                                         System.out.println("Ćwiczenie nie istnieje lub rozwiązanie do niego zostało napisane!");
                                     } else {
-                                        System.out.println("Podaj rozwiązanie do swojego zadania: ");
+                                        System.out.println("Podaj rozwiązanie do zadania: ");
                                         String solution = answer();
 
 
