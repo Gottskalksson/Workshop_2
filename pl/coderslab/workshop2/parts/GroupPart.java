@@ -1,7 +1,7 @@
-package pl.coderslab.Workshop_2.parts;
+package pl.coderslab.workshop2.parts;
 
-import pl.coderslab.Workshop_2.daos.GroupDao;
-import pl.coderslab.Workshop_2.models.Group;
+import pl.coderslab.workshop2.daos.GroupDao;
+import pl.coderslab.workshop2.models.Group;
 
 
 import java.util.Scanner;

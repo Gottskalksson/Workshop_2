@@ -1,7 +1,7 @@
-package pl.coderslab.Workshop_2.daos;
+package pl.coderslab.workshop2.daos;
 
-import pl.coderslab.Workshop_2.DBUtil;
-import pl.coderslab.Workshop_2.models.Group;
+import pl.coderslab.workshop2.DBUtil;
+import pl.coderslab.workshop2.models.Group;
 
 import java.sql.*;
 import java.util.Arrays;

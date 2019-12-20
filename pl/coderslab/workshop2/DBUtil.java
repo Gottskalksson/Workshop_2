@@ -1,4 +1,4 @@
-package pl.coderslab.Workshop_2;
+package pl.coderslab.workshop2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

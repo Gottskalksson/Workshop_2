@@ -1,17 +1,16 @@
-package pl.coderslab.Workshop_2.parts;
+package pl.coderslab.workshop2.parts;
 
 import org.mindrot.jbcrypt.BCrypt;
-import pl.coderslab.Workshop_2.DBUtil;
-import pl.coderslab.Workshop_2.daos.GroupDao;
-import pl.coderslab.Workshop_2.daos.UserDao;
-import pl.coderslab.Workshop_2.models.Group;
-import pl.coderslab.Workshop_2.models.User;
+import pl.coderslab.workshop2.DBUtil;
+import pl.coderslab.workshop2.daos.GroupDao;
+import pl.coderslab.workshop2.daos.UserDao;
+import pl.coderslab.workshop2.models.Group;
+import pl.coderslab.workshop2.models.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class UserPart {

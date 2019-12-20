@@ -1,11 +1,11 @@
-package pl.coderslab.Workshop_2.parts;
+package pl.coderslab.workshop2.parts;
 
 
-import pl.coderslab.Workshop_2.daos.ExerciseDao;
-import pl.coderslab.Workshop_2.daos.SolutionDao;
-import pl.coderslab.Workshop_2.daos.UserDao;
-import pl.coderslab.Workshop_2.models.Exercise;
-import pl.coderslab.Workshop_2.models.User;
+import pl.coderslab.workshop2.daos.ExerciseDao;
+import pl.coderslab.workshop2.daos.SolutionDao;
+import pl.coderslab.workshop2.daos.UserDao;
+import pl.coderslab.workshop2.models.Exercise;
+import pl.coderslab.workshop2.models.User;
 
 import java.util.Scanner;
 

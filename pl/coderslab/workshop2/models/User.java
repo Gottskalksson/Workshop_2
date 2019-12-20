@@ -1,4 +1,4 @@
-package pl.coderslab.Workshop_2.models;
+package pl.coderslab.workshop2.models;
 
 import org.mindrot.jbcrypt.BCrypt;
 

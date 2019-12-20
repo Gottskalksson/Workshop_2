@@ -1,9 +1,9 @@
-package pl.coderslab.Workshop_2;
+package pl.coderslab.workshop2;
 
 
 import org.mindrot.jbcrypt.BCrypt;
-import pl.coderslab.Workshop_2.daos.SolutionDao;
-import pl.coderslab.Workshop_2.models.Solution;
+import pl.coderslab.workshop2.daos.SolutionDao;
+import pl.coderslab.workshop2.models.Solution;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
