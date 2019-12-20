@@ -110,7 +110,8 @@ public class SolutionDao {
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_USER_SOLUTIONS_QUERY);
             statement.setInt(1, userId);
             ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            System.out.println("ID / Created / Updated / Description / Exercise ID / User ID");
+            while (resultSet.next()) {
                 solutions = getSolutions(solutions, resultSet);
             }
             return solutions;
