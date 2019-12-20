@@ -1,2 +1,13 @@
-UPDATE workshop2.user_groups SET name = 'klasa 3' WHERE id = 1;
-UPDATE workshop2.user_groups SET name = 'klasa 12' WHERE id = 2;
+INSERT INTO workshop2.exercises (id, title, description) VALUES (2, 'Zadanie 1', 'Ile to 2+2?');
+INSERT INTO workshop2.exercises (id, title, description) VALUES (3, 'Zadanie 12', 'Podziel 6/2');
+INSERT INTO workshop2.exercises (id, title, description) VALUES (4, 'Zadanie 5', 'Dokończ zdanie: Jestem za... w ... ');
+INSERT INTO workshop2.solutions (id, created, updated, description, exercise_id, user_id) VALUES (1, '2019-12-16 11:41:44', null, '-', 2, 1);
+INSERT INTO workshop2.solutions (id, created, updated, description, exercise_id, user_id) VALUES (2, '2019-12-17 12:00:20', null, '-', 3, 3);
+INSERT INTO workshop2.solutions (id, created, updated, description, exercise_id, user_id) VALUES (3, '2019-12-17 12:11:07', null, '-', 2, 3);
+INSERT INTO workshop2.solutions (id, created, updated, description, exercise_id, user_id) VALUES (4, '2019-12-18 10:57:37', null, 'No kurła czy(3)', 3, 1);
+INSERT INTO workshop2.solutions (id, created, updated, description, exercise_id, user_id) VALUES (5, '2019-12-19 11:07:13', null, 'Jestem zacofany w programowaniu', 4, 3);
+INSERT INTO workshop2.solutions (id, created, updated, description, exercise_id, user_id) VALUES (6, '2019-12-20 11:40:52', null, 'Somsiad złodźej kurła', 4, 1);
+INSERT INTO workshop2.user_groups (id, name) VALUES (1, 'klasa 3');
+INSERT INTO workshop2.user_groups (id, name) VALUES (4, 'Klasa 12');
+INSERT INTO workshop2.users (id, username, email, password, user_group_id) VALUES (1, 'Janusz', 'janusz@wp.pl', '$2a$10$oieqBY4xXOYjwocUI8CPyOa/kaoIc1UYy5OOeMpg4mo2sB2meVUT6', 4);
+INSERT INTO workshop2.users (id, username, email, password, user_group_id) VALUES (3, 'Adam', 'adam@gmail.com', '$2a$10$CKsv7s5DQQ8kegG8FhpMyu21B6SSbTFVGDsAt7.8/baX8qK6bPXtK', 4);
